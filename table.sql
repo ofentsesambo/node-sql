@@ -1,6 +1,6 @@
 create table visitor
-(   id seial primar key,
-    VisitorName varchar(100),
+(   id seial primary key,
+    visitorName varchar(100),
     age integer,
     dateOfVisit date,
     timeOfVisit time,

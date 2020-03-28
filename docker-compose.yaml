@@ -3,7 +3,7 @@ services:
   postgres:
     image: postgres:9.6
     environment:
-      - POSTGRES_USER=ofentse
+      - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=db
     volumes:
