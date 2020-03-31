@@ -7,18 +7,25 @@ const client = new Client ({
     port: 5432
 });
 
-const helloWorld = () => {
-    pool.query(
-        "SELECT $1::text as message"
-        ["Hello world!"],
-        (error, results) => {
-            if(error) {
-                throw error;
-            }
-        console.log(results.row);
-        }
+client.connect();
 
-    );
+const addNewVisitor = async (name, age, dateOfVisit, timeOfVisit, assistantName, comment) => {
+    try {
+        let results = await client.query(
+           ` INSERT INTO visitor(
+               
+                visitorName,
+                age,
+                dateOfVisit,
+                timeOfVisit,
+                assistantName,
+                comments,
+            ) values ($1, $2, $3 $4, $5, $6) returning *;`,
+        [name, age, dateOfVisit, timeOfVisit, assistantName, comment]
+        );
+
+        return results.rows;
+    } catch(error){
+        throw error;
+    }
 };
-
-helloWorld();
