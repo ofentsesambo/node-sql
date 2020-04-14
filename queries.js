@@ -30,7 +30,7 @@ const addNewVisitor = async (name, age, dateOfVisit, timeOfVisit, assistantName,
     }
 };
 
-const listAllVisiors = async() => {
+const listAllVisitors = async() => {
     const SQL = `SELECT id, visitorName FROM visitor;`
     try {
         query = await client.query(SQL);
@@ -75,3 +75,7 @@ const deleteVisitor = async() => {
         throw error;
     }
 };
+
+
+
+module.exports = {}

@@ -1,5 +1,5 @@
 create table visitor
-(   id seial primary key,
+(   id serial primary key,
     visitorName varchar(100),
     age integer,
     dateOfVisit date,
